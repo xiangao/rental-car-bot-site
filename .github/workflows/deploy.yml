@@ -31,3 +31,7 @@ jobs:
           path: '.'
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # GitHub's Pages publish backend can be slow; wait 30 min before
+          # giving up (default 10 min cancels a deploy that would still finish).
+          timeout: 1800000
